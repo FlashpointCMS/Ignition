@@ -1,12 +1,18 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import '@babel/polyfill'
+import 'mutationobserver-shim'
 
-Vue.config.productionTip = false
+import Vue from 'vue'
+
+import './plugins/utilities'
+import './plugins/components'
+import './plugins/bootstrap-vue'
+import router from './plugins/router'
+import store from './plugins/store'
+import './main.scss'
 
 new Vue({
+  el: '#app',
   router,
   store,
-  render: h => h(App)
-}).$mount('#app')
+  render: h => h(require('./main.vue').default)
+});

@@ -1,0 +1,66 @@
+$warning: #fd7e14;
+
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-vue/src/index.scss';
+
+@import "~animate.css/animate.css";
+
+.fp_table {
+  .table-b-table-default {
+    border-top: none;
+  }
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */
+{
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.fp_rich-text-editor {
+  @extend .form-control;
+  height: unset;
+  padding: 0;
+
+  .fp_rich-text-editor-bar {
+    @extend .bg-light;
+    @extend .d-flex;
+    @extend .justify-content-between;
+    border-top-left-radius: $input-border-radius-lg;
+    border-top-right-radius: $input-border-radius-lg;
+    border-bottom: $input-border-width solid $input-border-color;
+
+    *:first-child {
+      border-top-left-radius: $input-border-radius !important;
+    }
+
+    *:last-child {
+      border-top-right-radius: $input-border-radius !important;
+    }
+  }
+
+  .ProseMirror {
+    padding: $input-btn-padding-y $input-btn-padding-x;
+    border-bottom-left-radius: $input-border-radius;
+    border-bottom-right-radius: $input-border-radius;
+    transition: $input-transition;
+  }
+
+  .ProseMirror-focused {
+    outline: none;
+    box-shadow: $input-btn-focus-box-shadow;
+  }
+}
+
+.fp_disabled-background {
+  background-color: $input-disabled-bg;
+}
